@@ -21,9 +21,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	
-	
-func _input(event):
+func input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		print("hola")
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
