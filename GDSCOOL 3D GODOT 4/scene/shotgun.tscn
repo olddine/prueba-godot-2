@@ -1,15 +1,54 @@
-[gd_scene format=3 uid="uid://dyh385deqigir"]
+[gd_scene load_steps=8 format=3 uid="uid://dyh385deqigir"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u3mm"]
+albedo_color = Color(0.528031, 0.31314, 0.0165855, 1)
+metallic = 0.55
+roughness = 0.35
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_unm6q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pr2xg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c6irk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb14a"]
+albedo_color = Color(0.509286, 0.509286, 0.509286, 1)
+metallic = 0.48
+roughness = 0.7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q0r5f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hlrd7"]
 
 [node name="shotgun" type="Area3D"]
 
 [node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.46969e-08, -0.565, 0, 0.565, -2.46969e-08, 0, 0, 0, 0.565, 0.829277, -0.309642, -0.771961)
+material_override = SubResource("StandardMaterial3D_8u3mm")
+mesh = SubResource("CapsuleMesh_unm6q")
 
 [node name="body" type="MeshInstance3D" parent="body"]
+transform = Transform3D(0.866766, 0.608432, 0, -0.498715, 1.05745, 0, 0, 0, 0.625, -0.233973, -0.762941, 0)
+material_override = SubResource("StandardMaterial3D_8u3mm")
+mesh = SubResource("CapsuleMesh_pr2xg")
 
 [node name="body" type="MeshInstance3D" parent="body/body"]
+transform = Transform3D(0.692728, -0.112042, -0.0024495, -0.00107156, 0.0683057, -0.444462, 0.0561412, 1.38379, 0.0217409, 0.466105, 0.560932, 0)
+material_override = SubResource("StandardMaterial3D_8u3mm")
+mesh = SubResource("CapsuleMesh_c6irk")
 
-[node name="barrel" type="MeshInstance3D" parent="."]
+[node name="barrel2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.9233e-08, -1, 0, 0.44, -4.37114e-08, 0, 0, 0, 0.44, 0, 0, -0.977418)
+material_override = SubResource("StandardMaterial3D_lb14a")
+mesh = SubResource("CylinderMesh_q0r5f")
+skeleton = NodePath("")
 
-[node name="barrel" type="MeshInstance3D" parent="barrel"]
+[node name="barrel3" type="MeshInstance3D" parent="barrel2"]
+transform = Transform3D(1, 7.10543e-15, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.976711)
+material_override = SubResource("StandardMaterial3D_lb14a")
+mesh = SubResource("CylinderMesh_q0r5f")
+skeleton = NodePath("")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -0.757037)
+shape = SubResource("CapsuleShape3D_hlrd7")

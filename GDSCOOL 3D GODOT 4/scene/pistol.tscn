@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://epe87wtb5vja"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vukaa"]
+albedo_color = Color(0.370364, 0.370364, 0.370364, 1)
+metallic = 0.45
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w3vu2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2g1gh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsjex"]
+albedo_color = Color(0.409396, 0.233619, 4.81308e-08, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_68w3i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sod42"]
+
+[node name="pistol" type="Area3D"]
+
+[node name="barrel" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -2.54, 0, 1, -1.11027e-07, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vukaa")
+mesh = SubResource("CylinderMesh_w3vu2")
+
+[node name="cylinder" type="MeshInstance3D" parent="barrel"]
+transform = Transform3D(1.585, 0, 0, 0, 0.235, 0, 0, 0, 1.62, -0.274905, -1.07, 0)
+material_override = SubResource("StandardMaterial3D_vukaa")
+mesh = SubResource("CylinderMesh_2g1gh")
+
+[node name="grip" type="MeshInstance3D" parent="barrel"]
+transform = Transform3D(0.179437, 0.715307, 0, -0.412677, 0.311024, 0, 0, 0, 1.12, -0.614671, -1.54, 0)
+material_override = SubResource("StandardMaterial3D_jsjex")
+mesh = SubResource("CapsuleMesh_68w3i")
+skeleton = NodePath("../cylinder")
+
+[node name="col" type="CollisionShape3D" parent="."]
+transform = Transform3D(-7.71506e-08, -3.055, 0, 1.765, -1.33538e-07, 0, 0, 0, 1.465, 0.632923, 0, 0)
+shape = SubResource("CapsuleShape3D_sod42")

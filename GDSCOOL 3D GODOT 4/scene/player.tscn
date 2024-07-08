@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpmc2g58jnbn8"]
+[gd_scene load_steps=10 format=3 uid="uid://bpmc2g58jnbn8"]
 
 [ext_resource type="Script" path="res://scene/player.gd" id="1_ukumn"]
+[ext_resource type="PackedScene" uid="uid://epe87wtb5vja" path="res://scene/pistol.tscn" id="2_rq123"]
+[ext_resource type="PackedScene" uid="uid://bjntq07p1mj5x" path="res://scene/cub.tscn" id="3_fd3sv"]
+[ext_resource type="PackedScene" uid="uid://dyh385deqigir" path="res://scene/shotgun.tscn" id="4_x52lp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v58o3"]
 
@@ -29,6 +32,20 @@ mesh = SubResource("CapsuleMesh_f7mdd")
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.422689, -0.459361)
 material_override = SubResource("StandardMaterial3D_c2rm3")
 mesh = SubResource("CylinderMesh_dx4oa")
+
+[node name="guns" type="Node3D" parent="body"]
+
+[node name="pistol" parent="body/guns" instance=ExtResource("2_rq123")]
+transform = Transform3D(-0.0112339, 0, -0.234731, 0, 0.235, 0, 0.234731, 0, -0.0112339, 0.360663, 0, -1.8935)
+visible = false
+
+[node name="cub" parent="body/guns" instance=ExtResource("3_fd3sv")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.343236, 0.0323347, -0.959805)
+visible = false
+
+[node name="shotgun" parent="body/guns" instance=ExtResource("4_x52lp")]
+transform = Transform3D(-0.0167517, 0, -0.479708, 0, 0.48, 0, 0.479708, 0, -0.0167517, 0, 0, -1.6528)
+visible = false
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_6fl6x")
