@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720404857
-icon.svg::CompressedTexture2D::8090624830922283443::1720404808::1720404859::1::::<><>::
-::res://scene/::1720404808
-main.gd::GDScript::-1::1720404808::0::1::::<>Node<>::
-main.tscn::PackedScene::2557383613592816627::1720404808::0::1::::<><>::uid://bpmc2g58jnbn8::::res://scene/player.tscn
-player.gd::GDScript::-1::1720404808::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::3464195884729411191::1720404808::0::1::::<><>::res://scene/player.gd
+::res://::1720406746
+icon.svg::CompressedTexture2D::8090624830922283443::1720405515::1720405515::1::::<><>::
+::res://scene/::1720406705
+main.gd::GDScript::-1::1720405515::0::1::::<>Node<>::
+main.tscn::PackedScene::2557383613592816627::1720406705::0::1::::<><>::uid://bpmc2g58jnbn8::::res://scene/player.tscn
+player.gd::GDScript::-1::1720406705::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::3464195884729411191::1720405515::0::1::::<><>::res://scene/player.gd

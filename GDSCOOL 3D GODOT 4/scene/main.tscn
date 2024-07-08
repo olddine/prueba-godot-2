@@ -53,3 +53,6 @@ skeleton = NodePath("../MeshInstance3D")
 
 [node name="player" parent="." instance=ExtResource("2_04gi3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21418, 1.17205, 0.351657)
+
+[node name="player" parent="player" instance=ExtResource("2_04gi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21418, -0.106748, 0.351657)
