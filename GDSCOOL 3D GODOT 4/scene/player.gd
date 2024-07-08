@@ -24,10 +24,9 @@ func _ready():
 	
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		print("hola")
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
 		$Collision/camnode.rotate_y(deg_to_rad(-event.relative.x * CAM_ROT_SPEED))
-		$Collision/camnode.orthonormalized()
+		$Collision/camnode.orthonormalize()
 		
 		cam_x_rot = clamp(cam_x_rot - event.relative.y * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
 		cam_y_rot = clamp(cam_y_rot - event.relative.x * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
