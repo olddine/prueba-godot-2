@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyh385deqigir"]
+
+[node name="shotgun" type="Area3D"]
+
+[node name="body" type="MeshInstance3D" parent="."]
+
+[node name="body" type="MeshInstance3D" parent="body"]
+
+[node name="body" type="MeshInstance3D" parent="body/body"]
+
+[node name="barrel" type="MeshInstance3D" parent="."]
+
+[node name="barrel" type="MeshInstance3D" parent="barrel"]
+
+[node name="Collision" type="CollisionShape3D" parent="."]
