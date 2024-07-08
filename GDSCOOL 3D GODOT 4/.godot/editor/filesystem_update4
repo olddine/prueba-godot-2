@@ -1,7 +1,11 @@
-res://scene/main.tscn
 res://scene/player.tscn
+res://scene/bullet.gd
+res://scene/bullet.tscn
+res://scene/sbullet.gd
+res://scene/sbullet.tscn
+res://scene/guns.gd
+res://scene/main.tscn
 res://scene/enemy.tscn
 res://scene/shotgun.tscn
 res://scene/pistol.tscn
 res://scene/cub.tscn
-res://scene/guns.gd
