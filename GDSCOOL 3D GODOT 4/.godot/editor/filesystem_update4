@@ -4,3 +4,4 @@ res://scene/enemy.tscn
 res://scene/shotgun.tscn
 res://scene/pistol.tscn
 res://scene/cub.tscn
+res://scene/guns.gd

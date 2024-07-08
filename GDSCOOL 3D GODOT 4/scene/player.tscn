@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpmc2g58jnbn8"]
+[gd_scene load_steps=11 format=3 uid="uid://bpmc2g58jnbn8"]
 
 [ext_resource type="Script" path="res://scene/player.gd" id="1_ukumn"]
+[ext_resource type="Script" path="res://scene/guns.gd" id="2_qv8mr"]
 [ext_resource type="PackedScene" uid="uid://epe87wtb5vja" path="res://scene/pistol.tscn" id="2_rq123"]
 [ext_resource type="PackedScene" uid="uid://bjntq07p1mj5x" path="res://scene/cub.tscn" id="3_fd3sv"]
 [ext_resource type="PackedScene" uid="uid://dyh385deqigir" path="res://scene/shotgun.tscn" id="4_x52lp"]
@@ -34,6 +35,7 @@ material_override = SubResource("StandardMaterial3D_c2rm3")
 mesh = SubResource("CylinderMesh_dx4oa")
 
 [node name="guns" type="Node3D" parent="body"]
+script = ExtResource("2_qv8mr")
 
 [node name="pistol" parent="body/guns" instance=ExtResource("2_rq123")]
 transform = Transform3D(-0.0112339, 0, -0.234731, 0, 0.235, 0, 0.234731, 0, -0.0112339, 0.360663, 0, -1.8935)
