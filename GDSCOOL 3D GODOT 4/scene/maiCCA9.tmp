@@ -57,12 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21418, 1.17205, 0.351657)
 
 [node name="enemy" parent="." instance=ExtResource("2_fyg6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33744, 1.40068, 4.97139)
-speed = 200
 
 [node name="enemy2" parent="." instance=ExtResource("2_fyg6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67488, 1.31408, 9.94278)
-speed = 200
 
 [node name="enemy3" parent="." instance=ExtResource("2_fyg6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34976, 1.15492, 19.8856)
-speed = 200

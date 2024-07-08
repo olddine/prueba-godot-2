@@ -9,3 +9,5 @@ res://scene/enemy.tscn
 res://scene/shotgun.tscn
 res://scene/pistol.tscn
 res://scene/cub.tscn
+res://scene/player.gd
+res://scene/enemy.gd

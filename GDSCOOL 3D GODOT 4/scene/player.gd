@@ -19,6 +19,7 @@ var mouse_sensitivity = 0.05
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var health = 10
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -60,3 +61,10 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _damage(damage):
+	health -= damage
+	if health <= 0:
+		get_tree().quit()
+	pass
