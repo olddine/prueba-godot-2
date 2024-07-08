@@ -25,6 +25,7 @@ func _ready():
 	
 func input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		print("hola")
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
 		$camnode.rotate_y(deg_to_rad(-event.relative.x * CAM_ROT_SPEED))
 		$camnode.orthonormalized()
