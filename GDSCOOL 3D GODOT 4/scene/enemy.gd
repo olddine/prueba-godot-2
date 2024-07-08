@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var target = get_parent().get_node("player").global_tranform.origin
+	var target = get_parent().get_node("player").global_transform.origin
 	look_at(target, Vector3.UP)
 	var move = (target - global_transform.origin).normalized()*speed
 	velocity = move * delta
