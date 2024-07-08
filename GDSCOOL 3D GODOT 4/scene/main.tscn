@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bco2y8b5wo1jj"]
+
+[ext_resource type="PackedScene" uid="uid://bpmc2g58jnbn8" path="res://scene/player.tscn" id="2_04gi3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6l52n"]
+
+[sub_resource type="Sky" id="Sky_ji6pn"]
+sky_material = SubResource("ProceduralSkyMaterial_6l52n")
+
+[sub_resource type="Environment" id="Environment_kh8ds"]
+background_mode = 2
+sky = SubResource("Sky_ji6pn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_015jd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gh5sq"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5pj3h"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slvdn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_08026"]
+
+[node name="main" type="Node"]
+
+[node name="iluminati" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="iluminati"]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="iluminati"]
+environment = SubResource("Environment_kh8ds")
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world"]
+material_override = SubResource("StandardMaterial3D_015jd")
+mesh = SubResource("PlaneMesh_gh5sq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5pj3h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.07645)
+material_override = SubResource("StandardMaterial3D_slvdn")
+mesh = SubResource("BoxMesh_08026")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="player" parent="." instance=ExtResource("2_04gi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41926, 0)

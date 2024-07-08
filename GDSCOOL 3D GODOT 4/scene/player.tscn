@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpmc2g58jnbn8"]
+
+[ext_resource type="Script" path="res://scene/player.gd" id="1_ukumn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v58o3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f7mdd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2rm3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dx4oa"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6fl6x"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_ukumn")
+
+[node name="body" type="Node3D" parent="."]
+
+[node name="body" type="MeshInstance3D" parent="body"]
+material_override = SubResource("StandardMaterial3D_v58o3")
+mesh = SubResource("CapsuleMesh_f7mdd")
+
+[node name="eyes" type="MeshInstance3D" parent="body/body"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.422689, -0.459361)
+material_override = SubResource("StandardMaterial3D_c2rm3")
+mesh = SubResource("CylinderMesh_dx4oa")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6fl6x")
+
+[node name="camnode" type="Node3D" parent="Collision"]
+
+[node name="arm" type="SpringArm3D" parent="Collision/camnode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+spring_length = 3.0
+
+[node name="cam" type="Camera3D" parent="Collision/camnode/arm"]
