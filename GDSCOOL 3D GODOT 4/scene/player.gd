@@ -34,7 +34,7 @@ func _input(event):
 		$camnode/arm.rotation.x = cam_x_rot
 		
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		get_tree().quit()	
 		pass
 	
 	
