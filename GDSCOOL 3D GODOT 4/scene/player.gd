@@ -25,13 +25,13 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
-		$Collision/camnode.rotate_y(deg_to_rad(-event.relative.x * CAM_ROT_SPEED))
-		$Collision/camnode.orthonormalize()
+		$camnode.rotate_y(deg_to_rad(-event.relative.x * CAM_ROT_SPEED))
+		$camnode.orthonormalize()
 		
 		cam_x_rot = clamp(cam_x_rot - event.relative.y * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
 		cam_y_rot = clamp(cam_y_rot - event.relative.x * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
 		
-		$Collision/camnode/arm.rotation.x = cam_x_rot
+		$camnode/arm.rotation.x = cam_x_rot
 		
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()

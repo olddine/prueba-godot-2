@@ -33,10 +33,10 @@ mesh = SubResource("CylinderMesh_dx4oa")
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_6fl6x")
 
-[node name="camnode" type="Node3D" parent="Collision"]
+[node name="camnode" type="Node3D" parent="."]
 
-[node name="arm" type="SpringArm3D" parent="Collision/camnode"]
+[node name="arm" type="SpringArm3D" parent="camnode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 spring_length = 3.0
 
-[node name="cam" type="Camera3D" parent="Collision/camnode/arm"]
+[node name="cam" type="Camera3D" parent="camnode/arm"]
