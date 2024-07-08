@@ -30,9 +30,8 @@ func _input(event):
 		$camnode.rotate_y(deg_to_rad(-event.relative.x * CAM_ROT_SPEED))
 		$camnode.orthonormalized()
 		
-		cam_x_rot = clamp(cam_x_rot - event.relative.y * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
-		cam_y_rot = clamp(cam_y_rot - event.relative.x * CAM_ROT_SPEED, deg_to_rad(CAM_X_ROT_MIN), deg_to_rad(CAM_X_ROT_MAX))
-		
+		cam_x_rot = clamp(cam_x_rot - event.relative.y * CAM_ROT_SPEED, CAM_X_ROT_MIN, CAM_X_ROT_MAX)
+		cam_y_rot = clamp(cam_y_rot - event.relative.x * CAM_ROT_SPEED, CAM_X_ROT_MIN, CAM_X_ROT_MAX)		
 		$camnode/arm.rotation.x = cam_x_rot
 		
 	if event.is_action_pressed("ui_cancel"):
