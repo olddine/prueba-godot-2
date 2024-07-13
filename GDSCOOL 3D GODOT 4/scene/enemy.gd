@@ -20,7 +20,11 @@ func _process(delta):
 	_attack()
 	pass
  
-
+func _damage(damage):
+	health -= damage
+	if health <= 0:
+		queue_free()
+	pass
 
 func _attack():
 	if position.distance_to(player.position) <= 1.5:
@@ -33,8 +37,4 @@ func _on_body_entered(_body):
 		queue_free()
 	pass
 
-func _damage():
-	health -= damage
-	if health <= 0:
-		queue_free()
-	
+
